@@ -29,6 +29,7 @@ cat << 'EOF' > /var/lib/os-apply-config/templates/var/lib/ansible/playbooks/main
 - include: /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml
   vars:
     openshift_infra_nodes: "{{ groups.infra | default([]) }}"
+    os_firewall_use_firewalld: false
 
 <%#openshift_use_flannel%>
 - include: /var/lib/ansible/playbooks/flannel.yml
